@@ -3,6 +3,10 @@ const router = express.Router()
 
 const { protect } = require("../middleware/authMiddleware")
 
+//Reroute into note router
+const noteRouter = require("./noteRoutes")
+router.use("/:ticketId/notes", noteRouter)
+
 const {
   createTicket,
   getTickets,
